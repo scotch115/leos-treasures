@@ -2,12 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Shop from './Shop';
+import About from './About';
 import reportWebVitals from './reportWebVitals';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+
+const routing = (
+  <React.StrictMode>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={App}/>
+          <Route path="/about" component={About}/>
+          <Route path="/shop" component={Shop}/>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  </React.StrictMode>
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 
